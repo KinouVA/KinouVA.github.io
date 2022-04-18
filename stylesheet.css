@@ -60,6 +60,7 @@ body{
   height: 100vh;
   width: 100vw;
   background-color: Black;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -101,6 +102,19 @@ section{
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+}
+
+.projects-container section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 500px;
+  overflow-x: scroll;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
+
+.projects-container section img{
+  max-height: 500px;
 }
 
 footer{
