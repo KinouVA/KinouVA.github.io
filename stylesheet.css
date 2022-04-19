@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 *{
+  cursor: crosshair;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -46,6 +47,7 @@ header{
   }
 
 header h1{
+  cursor: crosshair;
   font-size: 106px;
   font-family: 'Raleway', arial;
   text-align: center;
@@ -95,6 +97,7 @@ main{
 }
 
 section{
+  cursor: crosshair;
   font-family: "Raleway", arial;
   background-color: white;
   margin: 0 auto;
@@ -106,7 +109,7 @@ section{
 
 .projects-container section{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 500px;
   overflow-x: scroll;
   scroll-snap-align: start;
