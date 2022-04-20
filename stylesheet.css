@@ -107,17 +107,21 @@ section{
   text-align: center;
 }
 
+.projects-container{
+}
+
 .projects-container section{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
   grid-template-rows: 500px;
   overflow-x: scroll;
-  scroll-snap-align: start;
   scroll-behavior: smooth;
 }
 
 .projects-container section img{
-  max-height: 500px;
+  height: 500px;
+  padding: 5px;
 }
 
 footer{
@@ -130,7 +134,7 @@ footer a{
 }
 
 @media screen and (max-width: 1000px) {
-  main{
+  section{
     width: 100vw;
   }
 }
