@@ -1,0 +1,32 @@
+@media screen and (max-width: 1000px) {
+  body{
+    overflow: overlay;
+  }
+  section{
+    width: 100vw;
+  }
+  .music-player{
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #A5C9FF;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-corner{
+    background: #030303;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E4EFFF;
+  }
+}

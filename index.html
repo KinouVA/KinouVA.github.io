@@ -2,23 +2,71 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="./css/1000.css">
     <title>Kinou-cloud.tk</title>
   </head>
   <body>
     <div class="music-container">
-      <div class="music-player">
-        <p>Turn down your volume...</p>
-        <iframe height="300px" scrolling="no" frameborder="" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1251128752&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/andrew-wade-768533132" title="Kinou" target="_blank" style="color: #cccccc; text-decoration: none;">Kinou</a> · <a href="https://soundcloud.com/andrew-wade-768533132/bc160flp" title="bc160.flp" target="_blank" style="color: #cccccc; text-decoration: none;">bc160.flp</a></div>
+      <div id="player">
+        <input tabindex="1">
       </div>
+      <script>
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'RY7FpB9BZH4',
+          events: {
+            'onReady': onPlayerReady,
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        // event.target.seekTo(42);
+        event.target.playVideo();
+        jumpstart_player();
+      }
+
+      async function jumpstart_player() {
+        for (let i = 0; i < 10; i++) {
+          await sleep(500);
+          if (player.getPlayerState() == 1) {
+            break;
+          }
+          if (player.getPlayerState() == 2 || player.getPlayerState() == -1) {
+            player.mute();
+            player.playVideo();
+            break;
+          }
+        }
+      }
+      </script>
+      <!-- <div class="music-player">
+        <p>Turn down your volume...</p>
+        <iframe SameSite=Secure height="300px" scrolling="no" frameborder="" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1251128752&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/andrew-wade-768533132" title="Kinou" target="_blank" style="color: #cccccc; text-decoration: none;">Kinou</a> · <a href="https://soundcloud.com/andrew-wade-768533132/bc160flp" title="bc160.flp" target="_blank" style="color: #cccccc; text-decoration: none;">bc160.flp</a></div>
+      </div> -->
     </div>
     <nav>
-      <a style="float: left;" href="#"><img width="50px" src="./kno.png" alt="Logo"></a>
+      <a style="float: left;" href="#"><img width="50px" src="./img/kno.png" alt="Logo"></a>
       <div class="navigation">
         <a href="./index.html">Home</a>
         <a href="#ab0">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Projects</a>
+        <!-- <a href="#">Blog</a>
+        <a href="#">Projects</a> -->
         <a href="#" style="color: #A5FFC9;">Login</a>
       </div>
     </nav>
@@ -45,11 +93,11 @@
       <section class="projects-container">
         <h2>HaHa Funny Slider</h2>
         <section>
-          <img src="./KNO-Mischevious.png" alt="1">
-          <img src="./KNO-Smile.png" alt="2">
-          <img src="./KNO-Sad.png" alt="3">
-          <img src="./KNO-Shark.png" alt="4" href="#">
-          <img src="./KNO-Tongue_in_cheek.png" alt="5">
+          <img src="./img/KNO-Mischevious.png" alt="1">
+          <img src="./img/KNO-Smile.png" alt="2">
+          <img src="./img/KNO-Sad.png" alt="3">
+          <img src="./img/KNO-Shark.png" alt="4" href="#">
+          <img src="./img/KNO-Tongue_in_cheek.png" alt="5">
         </section>
       </section>
     </main>
